@@ -87,9 +87,10 @@ public class BoardPanel extends JPanel implements ICommon {
                     numSquareClosed++;
                     if (!listSquare[i][j].isTarget()) {
                         lbSquare[i][j].setText("");
-                    } else {
-                        lbSquare[i][j].setText("\uD83D\uDEA9"); // ki tu 'flag'
-                    }
+                    } 
+                    // else {
+                    //     lbSquare[i][j].setText("\uD83D\uDEA9"); // ki tu 'flag'
+                    // }
                 } else {
                     if (listSquare[i][j].isHasMine()) {
                         lbSquare[i][j].setText("\uD83D\uDCA3"); // ki tu 'bomb'
@@ -97,36 +98,37 @@ public class BoardPanel extends JPanel implements ICommon {
                         int numMineAround = listSquare[i][j].getNumMineAround();
                         if (numMineAround == 0) {
                             lbSquare[i][j].setText("");
-                        } else {
-                            lbSquare[i][j].setText(numMineAround + "");
-                            // đặt màu số cho dễ nhìn
-                            switch (numMineAround) {
-                                case 1:
-                                    lbSquare[i][j].setForeground(new Color(128, 128, 128));
-                                    break;
-                                case 2:
-                                    lbSquare[i][j].setForeground(new Color(255, 0, 0));
-                                    break;
-                                case 3:
-                                    lbSquare[i][j].setForeground(new Color(0, 204, 0));
-                                    break;
-                                case 4:
-                                    lbSquare[i][j].setForeground(new Color(102, 0, 255));
-                                    break;
-                                case 5:
-                                    lbSquare[i][j].setForeground(new Color(128, 128, 128));
-                                    break;
-                                case 6:
-                                    lbSquare[i][j].setForeground(new Color(255, 0, 0));
-                                    break;
-                                case 7:
-                                    lbSquare[i][j].setForeground(new Color(0, 204, 0));
-                                    break;
-                                case 8:
-                                    lbSquare[i][j].setForeground(new Color(102, 0, 255));
-                                    break;
-                            }
-                        }
+                        } 
+                        // else {
+                        //     lbSquare[i][j].setText(numMineAround + "");
+                        //     // đặt màu số cho dễ nhìn
+                        //     switch (numMineAround) {
+                        //         case 1:
+                        //             lbSquare[i][j].setForeground(new Color(128, 128, 128));
+                        //             break;
+                        //         case 2:
+                        //             lbSquare[i][j].setForeground(new Color(255, 0, 0));
+                        //             break;
+                        //         case 3:
+                        //             lbSquare[i][j].setForeground(new Color(0, 204, 0));
+                        //             break;
+                        //         case 4:
+                        //             lbSquare[i][j].setForeground(new Color(102, 0, 255));
+                        //             break;
+                        //         case 5:
+                        //             lbSquare[i][j].setForeground(new Color(128, 128, 128));
+                        //             break;
+                        //         case 6:
+                        //             lbSquare[i][j].setForeground(new Color(255, 0, 0));
+                        //             break;
+                        //         case 7:
+                        //             lbSquare[i][j].setForeground(new Color(0, 204, 0));
+                        //             break;
+                        //         case 8:
+                        //             lbSquare[i][j].setForeground(new Color(102, 0, 255));
+                        //             break;
+                        //     }
+                        // }
                     }
                     lbSquare[i][j].setBackground(Color.white);
                 }

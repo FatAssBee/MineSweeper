@@ -37,7 +37,7 @@ public class ControlPanel extends JPanel implements ICommon {
 
         lbNumSquareClosed = new JLabel();
         lbNumSquareClosed.setFont(font);
-        lbNumSquareClosed.setText("Số ô chưa mở: " + Board.NUM_ROWS * Board.NUM_COLUMNS);
+        lbNumSquareClosed.setText("Ununlocked tite: " + Board.NUM_ROWS * Board.NUM_COLUMNS);
         lbNumSquareClosed.setBounds(10, 10, 250, 40);
         add(lbNumSquareClosed);
 
@@ -48,7 +48,7 @@ public class ControlPanel extends JPanel implements ICommon {
 
         btnRestart = new JButton();
         btnRestart.setFont(font);
-        btnRestart.setText("Chơi lại");
+        btnRestart.setText("New game");
         btnRestart.setBounds(490, 10, 200, 40);
         add(btnRestart);
     }
@@ -59,7 +59,7 @@ public class ControlPanel extends JPanel implements ICommon {
             @Override
             public void actionPerformed(ActionEvent e) {
                 listener.restart();
-                lbNumSquareClosed.setText("Số ô chưa mở: " + Board.NUM_ROWS * Board.NUM_COLUMNS);
+                lbNumSquareClosed.setText("Ununlocked tite: " + Board.NUM_ROWS * Board.NUM_COLUMNS);
                 lbNotify.setText("");
             }
         });
@@ -70,12 +70,12 @@ public class ControlPanel extends JPanel implements ICommon {
     }
 
     public void updateStatus(int numSquareClosed) {
-        lbNumSquareClosed.setText("Số ô chưa mở: " + numSquareClosed);
+        lbNumSquareClosed.setText("Ununlocked tite: " + numSquareClosed);
         if (numSquareClosed == Board.NUM_MINES) {
-            lbNotify.setText("THẮNG");
+            lbNotify.setText("WINNNNNN");
             lbNotify.setForeground(Color.blue);
         } else if (numSquareClosed == 0) {
-            lbNotify.setText("THUA");
+            lbNotify.setText("LOSE");
             lbNotify.setForeground(Color.red);
         }
     }
